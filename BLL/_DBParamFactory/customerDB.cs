@@ -40,7 +40,7 @@ namespace BAL.Repositories
                 {
                     if (_dt.Rows.Count > 0)
                     {
-                        lst = _dt.DataTableToList<CustomerBLL>();
+                        lst = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<CustomerBLL>>();
                     }
                 }
                 return lst;
@@ -141,7 +141,7 @@ namespace BAL.Repositories
                 int _obj = 0;
                 SqlParameter[] p = new SqlParameter[2];
                 p[0] = new SqlParameter("@id", data.CustomerID);
-                p[1] = new SqlParameter("@brandid", data.BrandID);
+                p[1] = new SqlParameter("@LastUpdatedDate", data.LastUpdatedDate);
 
                 _obj = (new DBHelper().ExecuteNonQueryReturn)("sp_DeleteCustomer", p);
 

@@ -28,7 +28,6 @@ namespace ZSixRestaurantAdmin._Models
         public string Longitude { get; set; }
         public string Latitude { get; set; }
         public string Passcode { get; set; }
-
         public string Opentime { get; set; }
         public int IsPickupAllowed { get; set; }
         public int IsDeliveryAllowed { get; set; }
@@ -38,6 +37,7 @@ namespace ZSixRestaurantAdmin._Models
         public int StatusID { get; set; }
         public string ImageURL { get; set; }
         public Nullable<int> BrandID { get; set; }
+        public int IsDineInAllowed { get; set; }
+        public int IsAdvanceOrder { get; set; }
     }
-
 }

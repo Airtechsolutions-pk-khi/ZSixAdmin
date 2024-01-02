@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
@@ -12,7 +12,7 @@
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <RootNamespace>ZSixRestaurantAdmin</RootNamespace>
     <UserSecretsId>5ccfc529-0dda-4101-8419-761032993cff</UserSecretsId>
-    <AssemblyName>cafeela-admin</AssemblyName>
+    <AssemblyName>ZSix-Admin</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,6 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\admin\settings\delivery-boy\" />
+    <Folder Include="ClientApp\src\app\admin\settings\reservation\" />
     <Folder Include="Upload\Offers\" />
   </ItemGroup>
 

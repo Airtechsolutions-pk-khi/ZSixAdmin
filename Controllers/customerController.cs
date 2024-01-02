@@ -48,7 +48,7 @@ namespace ZSixRestaurantAdmin.Controllers
         [Route("delete")]
         public int PostDelete([FromBody]CustomerBLL obj)
         {
-            return _service.Delete(obj);
+            return _service.Delete(obj); ;
         }
     }
 }

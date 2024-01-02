@@ -63,7 +63,7 @@
                 <td colspan="2" style="text-align:right;"><h5>#discount#</h5></td>
             </tr>
             <tr>
-                <td colspan="2"><h5>Tax (inc SST) 13%</h5></td>
+                <td colspan="2"><h5>Tax (inc SST)</h5></td>
                 <td></td>
                 <td colspan="2" style="text-align:right;"><h5>#tax#</h5></td>
             </tr>

@@ -49,10 +49,19 @@ import { OrderdetailsComponent } from './admin/sales/orderdetails/orderdetails.c
 import { ItemsettingsComponent } from './admin/menu/items/itemsettings/itemsettings.component';
 import { ExcelService } from 'src/ExportExcel/excel.service';
 import { DeliveryComponent } from './admin/settings/delivery/delivery.component';
-import { AdddeliveryComponent } from './admin/settings/Delivery/adddelivery/adddelivery.component';
+import { AdddeliveryComponent } from '../../../ClientApp/src/app/admin/settings/delivery/adddelivery/adddelivery.component';
+import { DeliveryBoyComponent } from './admin/settings/delivery-boy/delivery-boy.component';
+import { AdddeliveryboyComponent } from './admin/settings/delivery-boy/adddeliveryboy/adddeliveryboy.component';
 import { AppsettingsComponent } from './admin/settings/appsettings/appsettings.component';
 import { AddonsComponent } from './admin/menu/addons/addons.component';
 import { AddaddonsComponent } from './admin/menu/addons/addaddons/addaddons.component';
+import { ReservationComponent } from './admin/settings/reservation/reservation.component';
+import { ReservationdetailsComponent } from './admin/settings/reservationdetails/reservationdetails.component';
+import { ReservationdetailComponent } from './admin/report/reservationdetail/reservationdetail.component';
+import { DeliveryboydetailComponent } from './admin/report/deliveryboydetail/deliveryboydetail.component';
+import { OrderbytypeComponent } from './admin/report/orderbytype/orderbytype.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +104,12 @@ import { AddaddonsComponent } from './admin/menu/addons/addaddons/addaddons.comp
     AppsettingsComponent,
     AddonsComponent,
     AddaddonsComponent,
+    DeliveryBoyComponent,
+    AdddeliveryboyComponent,
+    ReservationComponent,
+    ReservationdetailsComponent,
+    DeliveryboydetailComponent,
+    ReservationdetailComponent
    
     
   ],
@@ -156,16 +171,27 @@ import { AddaddonsComponent } from './admin/menu/addons/addaddons/addaddons.comp
           { path: 'report/salescustomerwise', component: SalescustomerwiseComponent },
           { path: 'report/salescategorywise', component: SalescategorywiseComponent },
           { path: 'report/salesitemwise', component: SalesitemwiseComponent },
+          { path: 'report/reservationdetail', component: ReservationdetailComponent },
+          { path: 'report/deliveryboydetail', component: DeliveryboydetailComponent },
+          { path: 'report/orderbytype', component: OrderbytypeComponent },
+
 
           { path: 'delivery', component: DeliveryComponent },
           { path: 'delivery/add', component: AdddeliveryComponent },
           { path: 'delivery/edit/:id', component: AdddeliveryComponent },
+
+          { path: 'deliveryBoy', component: DeliveryBoyComponent },
+          { path: 'deliveryBoy/add', component: AdddeliveryboyComponent },
+          { path: 'deliveryBoy/edit/:id', component: AdddeliveryboyComponent },
 
           { path: 'appsettings', component: AppsettingsComponent},
 
           { path: 'addons', component: AddonsComponent },
           { path: 'addons/add', component: AddaddonsComponent },
           { path: 'addons/edit/:id', component: AddaddonsComponent },
+
+          { path: 'reservation', component: ReservationComponent },
+          { path: 'reservation/view/:id', component: ReservationdetailsComponent },
         ]
       }
     ]),

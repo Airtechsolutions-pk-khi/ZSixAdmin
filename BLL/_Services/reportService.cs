@@ -82,5 +82,39 @@ namespace ZSixRestaurantAdmin.BLL._Services
                 return new List<SalesCategorywiseBLL>();
             }
         }
+        public List<ReservationDetailBLL> GetReservationDetailRpt(int brandID, string locaitonID, DateTime FromDate, DateTime ToDate)
+        {
+            try
+            {
+                return _service.GetReservationDetaillRpt(brandID, locaitonID, FromDate, ToDate);
+            }
+            catch (Exception ex)
+            {
+                return new List<ReservationDetailBLL>();
+            }
+        }
+        public List<DeliveryBoyDetailBLL> GetDeliveryBoyDetailRpt(int brandID, DateTime FromDate, DateTime ToDate)
+        {
+            try
+            {
+                return _service.GetDeliveryBoyDetailRpt(brandID, FromDate, ToDate);
+            }
+            catch (Exception ex)
+            {
+                return new List<DeliveryBoyDetailBLL>();
+            }
+        }
+        public List<OrdersBLL> OrderReportByType(int brandID, int orderType, int locationId, DateTime FromDate, DateTime ToDate)
+        {
+            try
+            {
+                return _service.OrderReportByType(brandID, orderType, locationId, FromDate, ToDate);
+            }
+            catch (Exception ex)
+            {
+                return new List<OrdersBLL>();
+            }
+        }
+
     }
 }

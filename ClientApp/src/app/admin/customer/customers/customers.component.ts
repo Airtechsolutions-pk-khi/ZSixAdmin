@@ -6,7 +6,7 @@ import { LocalStorageService } from 'src/app/_services/local-storage.service';
 import { Router } from '@angular/router';
 import { Customers } from 'src/app/_models/Customers';
 import { ToastService } from 'src/app/_services/toastservice';
-import { ExcelService } from 'src/ExportExcel/excel.service';
+//import { ExcelService } from 'src/ExportExcel/excel.service';
 
 @Component({
   selector: 'app-customers',
@@ -27,7 +27,7 @@ export class CustomersComponent implements OnInit {
 
   constructor(public service: CustomersService,
     public ls :LocalStorageService,
-    public excelService: ExcelService,
+    //public excelService: ExcelService,
     public ts :ToastService,
     public router:Router) {
      this.selectedBrand =this.ls.getSelectedBrand().brandID;
@@ -40,13 +40,13 @@ export class CustomersComponent implements OnInit {
   ngOnInit() {
     this.getData();
   }
-  exportAsXLSX(): void {
-    this.service.ExportList(this.selectedBrand).subscribe((res: any) => {    
-      this.excelService.exportAsExcelFile(res, 'Report_Export');
-    }, error => {
-      this.ts.showError("Error","Failed to export")
-    });
-  }
+  //exportAsXLSX(): void {
+  //  this.service.ExportList(this.selectedBrand).subscribe((res: any) => {    
+  //    this.excelService.exportAsExcelFile(res, 'Report_Export');
+  //  }, error => {
+  //    this.ts.showError("Error","Failed to export")
+  //  });
+  //}
   getData() {    
     this.service.getAllData(this.selectedBrand);    
     this.data$ = this.service.data$;
@@ -69,8 +69,9 @@ export class CustomersComponent implements OnInit {
         this.router.navigate(["admin/customer/edit", customers]);
   }
 
-  Delete(obj) {
-    this.service.delete(obj).subscribe((res: any) => {
+  Delete(customers) {
+    debugger
+    this.service.delete(customers).subscribe((res: any) => {
       if(res!=0){
         this.ts.showSuccess("Success","Record deleted successfully.")
         this.getData();

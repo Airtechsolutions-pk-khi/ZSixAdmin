@@ -69,4 +69,33 @@ export class SalescategorywiseReport {
   price: string;
   profit: string;
   itemID: string;
+} export class ReservationdetailReport {
+  fullName: string;
+  locationID: string;
+  mobileNumber: string;
+  numberPerson: string;
+  reservationDate: string;
+  sittingArea: string;
+}
+export class DeliveryboydetailReport {
+  dbName: string;
+  dBAddress: string;
+  dBContactNo: string;
+  dBVehicleNo: string;
+  dBCNICNo: string;
+  createdOn: string;
+  brandID: number;
+  statusID: number;
+  amount: number;
+}
+export class OrderReportbyType {
+  orderID: number;
+  orderNo: number;
+  transactionNo: number;
+  name: string;
+  mobile: string;
+  amountTotal: number;
+  orderDate: string;
+  orderType: string;
+  statusID: number;
 }

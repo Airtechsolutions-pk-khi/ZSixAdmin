@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SummaryReport, SalesdetailReport, SalescategorywiseReport, SalescustomerwiseReport, SalesitemwiseReport } from '../_models/Report';
+import { SummaryReport, SalesdetailReport, SalescategorywiseReport, SalescustomerwiseReport, SalesitemwiseReport, ReservationdetailReport, DeliveryboydetailReport } from '../_models/Report';
 import { Observable } from 'rxjs';
 ;
 
@@ -41,5 +41,11 @@ export class ReportService {
   loadLocations(brandId) {
     return this.http.get<Location[]>(`api/location/all/${brandId}`);
   }
+  ReservationDetailRpt(brandID, locationID, fromDate, toDate) {
+    return this.http.get<ReservationdetailReport[]>(`api/report/reservationdetail/${brandID}/${locationID}/${fromDate}/${toDate}`);
+  }
 
+  DeliveryBoyDetailRpt(brandID, fromDate, toDate) {
+    return this.http.get<DeliveryboydetailReport[]>(`api/report/deliveryboydetail/${brandID}/${fromDate}/${toDate}`);
+  }
 }

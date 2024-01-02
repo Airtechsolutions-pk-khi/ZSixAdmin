@@ -1,0 +1,135 @@
+<!-- Page Heading -->
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <div class="row">
+      <div class="col-md-6">
+        <h6 class="m-0 font-weight-bold text-orange">
+          Reservation Details
+          <!--- <span class="badge badge-info">
+            {{
+                        reservations.statusID == 102? "Reservation Accepted" : reservations.statusID == 103? "Reservation Rejected"
+            }}
+          </span>-->
+        </h6>
+      </div>
+      <div class="col-md-6 text-right">
+
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-12" *ngIf="reservations.statusID!=100">
+        <div class="card border-left-info shadow">
+          <div class="card-header border-bottom-0">
+            <div class="row">
+              <div class="col-md-3">
+                Reservation Status
+              </div>
+              <div class="col-md-3">
+
+              </div>
+              <div class="col-md-3">
+
+              </div>
+              <div class="col-md-3" style="max-width: 20%;">
+                <button class="btn btn-success" (click)="Update(reservations)" style="float: left;">
+                  <i class="fas fa-fw fa-check"></i> Accept
+                </button>
+                <button class="btn btn-primary" (click)="Reject(reservations)" style="float: right;">
+                  <i class="fas fa-fw fa-cut"></i> Reject
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+
+        <div class="card border-left-success shadow mb-4">
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header border-bottom-0">Customer Information</div>
+
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                  <div class="list-group list-group-flush small">
+                    <a class="list-group-item list-group-item-action" href="#!">
+                      Customer Name
+                    </a>
+                  </div>
+                </div>
+                <div class="mr-2">{{ customers.fullName }}</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                  <div class="list-group list-group-flush small">
+                    <a class="list-group-item list-group-item-action" href="#!">
+                      Email
+                    </a>
+                  </div>
+                </div>
+                <div class="mr-2">{{ customers.email }}</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                  <div class="list-group list-group-flush small">
+                    <a class="list-group-item list-group-item-action" href="#!">
+                      Contact Number
+                    </a>
+                  </div>
+                </div>
+                <div class="mr-2">{{ customers.mobile }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card border-left-warning shadow ">
+
+          <div class="card-body">
+
+            <!-- Report summary card example-->
+            <div class="card">
+              <div class="card-header border-bottom-0">Reservation Detail</div>
+
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                  <div class="list-group list-group-flush small">
+                    <a class="list-group-item list-group-item-action" href="#!">
+                      Number of Person
+                    </a>
+                  </div>
+                </div>
+                <div class="mr-2">{{ reservations.numberPerson }}</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                  <div class="list-group list-group-flush small">
+                    <a class="list-group-item list-group-item-action" href="#!">
+                      Reservation Date
+                    </a>
+                  </div>
+                </div>
+                <div class="mr-2">{{ reservations.reservationDate }}</div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                  <div class="list-group list-group-flush small">
+                    <a class="list-group-item list-group-item-action" href="#!">
+                      Sitting Area
+                    </a>
+                  </div>
+                </div>
+                <div class="mr-2">
+                  {{ reservations.sittingArea }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

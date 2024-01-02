@@ -43,7 +43,6 @@ namespace BAL.Repositories
                     if (_dt.Rows.Count > 0)
                     {
                         lst= JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<salesSummarytBLL>>();
-                        //lst = _dt.DataTableToList<salesSummarytBLL>();
                     }
                 }
                 return lst;
@@ -195,6 +194,90 @@ namespace BAL.Repositories
             catch (Exception ex)
             {
                 return new List<SalesCustomerwiseBLL>();
+            }
+        }
+        public List<ReservationDetailBLL> GetReservationDetaillRpt(int brandID, string locationID, DateTime FromDate, DateTime ToDate)
+        {
+            try
+            {
+                var lst = new List<ReservationDetailBLL>();
+
+                SqlParameter[] p = new SqlParameter[4];
+                p[0] = new SqlParameter("@brandid", brandID);
+                p[1] = new SqlParameter("@locationid", locationID);
+                p[2] = new SqlParameter("@fromdate", FromDate);
+                p[3] = new SqlParameter("@todate", ToDate);
+
+
+                _dt = (new DBHelper().GetTableFromSP)("sp_rptReservationsDetailReport", p);
+                if (_dt != null)
+                {
+                    if (_dt.Rows.Count > 0)
+                    {
+                        lst = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<ReservationDetailBLL>>();
+                    }
+                }
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                return new List<ReservationDetailBLL>();
+            }
+        }
+        public List<DeliveryBoyDetailBLL> GetDeliveryBoyDetailRpt(int brandID, DateTime FromDate, DateTime ToDate)
+        {
+            try
+            {
+                var lst = new List<DeliveryBoyDetailBLL>();
+
+                SqlParameter[] p = new SqlParameter[3];
+                p[0] = new SqlParameter("@brandid", brandID);
+                p[1] = new SqlParameter("@fromdate", FromDate);
+                p[2] = new SqlParameter("@todate", ToDate);
+
+
+                _dt = (new DBHelper().GetTableFromSP)("sp_rptDeliveryBoysDetailReport", p);
+                if (_dt != null)
+                {
+                    if (_dt.Rows.Count > 0)
+                    {
+                        lst = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<DeliveryBoyDetailBLL>>();
+                    }
+                }
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                return new List<DeliveryBoyDetailBLL>();
+            }
+        }
+        public List<OrdersBLL> OrderReportByType(int brandId, int orderType, int locationId, DateTime FromDate, DateTime ToDate)
+        {
+            try
+            {
+                var lst = new List<OrdersBLL>();
+
+                SqlParameter[] p = new SqlParameter[5];
+                p[0] = new SqlParameter("@brandId", brandId);
+                p[1] = new SqlParameter("@orderType", orderType);
+                p[2] = new SqlParameter("@locationid", locationId);
+                p[3] = new SqlParameter("@fromdate", FromDate);
+                p[4] = new SqlParameter("@todate", ToDate);
+
+
+                _dt = (new DBHelper().GetTableFromSP)("sp_rptSalesOrdersReportByType", p);
+                if (_dt != null)
+                {
+                    if (_dt.Rows.Count > 0)
+                    {
+                        lst = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<OrdersBLL>>();
+                    }
+                }
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                return new List<OrdersBLL>();
             }
         }
     }

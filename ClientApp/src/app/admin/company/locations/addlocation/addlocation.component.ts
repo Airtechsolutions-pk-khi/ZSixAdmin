@@ -60,7 +60,9 @@ export class AddlocationComponent implements OnInit {
       closetime: [''],
       brandID: this.ls.getSelectedBrand().brandID,
       isPickupAllowed:[true],
-      isDeliveryAllowed:[true]
+      isDeliveryAllowed: [true],
+      isDineInAllowed: [true],
+      isAdvanceOrder: [true]
     });
   }
 
@@ -88,6 +90,8 @@ export class AddlocationComponent implements OnInit {
     this.f.closetime.setValue(obj.closetime);
     this.f.isPickupAllowed.setValue(obj.isPickupAllowed === 1 ? true : false);
     this.f.isDeliveryAllowed.setValue(obj.isDeliveryAllowed === 1 ? true : false);
+    this.f.isDineInAllowed.setValue(obj.isDineInAllowed === 1 ? true : false);
+    this.f.isAdvanceOrder.setValue(obj.isAdvanceOrder === 1 ? true : false);
 
     //this.opentime.hour = new Date("01/01/1900 " + obj.opentime).getHours();
     //this.opentime.minute = new Date("01/01/1900 " + obj.opentime).getMinutes();

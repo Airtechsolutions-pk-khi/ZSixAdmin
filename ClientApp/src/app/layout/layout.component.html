@@ -93,14 +93,17 @@
                     <span>Reports</span>
                 </a>
                 <div id="collapseReports" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" [routerLink]="['/admin/report/summary']">Sales Summary </a>
-                        <a class="collapse-item" [routerLink]="['/admin/report/salesdetail']"> Sales details</a>
-                        <a class="collapse-item" [routerLink]="['/admin/report/salesitemwise']">Item Sales </a>
-                        <a class="collapse-item" [routerLink]="['/admin/report/salescustomerwise']">Customer Sales </a>
-                        <a class="collapse-item" [routerLink]="['/admin/report/salescategorywise']">Category Sales </a>
-                        <!-- <a class="collapse-item" [routerLink]="['/admin/report/salesuserwise']">User Sales </a> -->
-                    </div>
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/admin/report/summary']">Sales Summary </a>
+                    <a class="collapse-item" [routerLink]="['/admin/report/salesdetail']"> Sales details</a>
+                    <a class="collapse-item" [routerLink]="['/admin/report/salesitemwise']">Item Sales </a>
+                    <a class="collapse-item" [routerLink]="['/admin/report/salescustomerwise']">Customer Sales </a>
+                    <a class="collapse-item" [routerLink]="['/admin/report/salescategorywise']">Category Sales </a>
+                    <a class="collapse-item" [routerLink]="['/admin/report/reservationdetail']">Reservation Detail </a>
+                    <a class="collapse-item" [routerLink]="['/admin/report/deliveryboydetail']">Rider Detail </a>
+                    <!-- <a class="collapse-item" [routerLink]="['/admin/report/salesuserwise']">User Sales </a> -->
+                    <a class="collapse-item" [routerLink]="['/admin/report/orderbytype']"> Order Details by Type </a>
+                  </div>
                 </div>
             </li>
             <!-- <hr class="sidebar-divider">
@@ -124,13 +127,15 @@
                     <span>Settings</span>
                 </a>
                 <div id="collapseSettings" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <!-- <a class="collapse-item" [routerLink]="['/generalsettings']">General Settings </a> -->
-                        <a class="collapse-item" [routerLink]="['/admin/banner']">Discount Banners | APP</a>
-                        <a class="collapse-item" [routerLink]="['/admin/offers']">Offers | APP</a>
-                        <a class="collapse-item" [routerLink]="['/admin/delivery']">Delivery</a>
-                        <a class="collapse-item" [routerLink]="['/admin/appsettings']">App Setting</a>
-                    </div>
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <!-- <a class="collapse-item" [routerLink]="['/generalsettings']">General Settings </a> -->
+                    <a class="collapse-item" [routerLink]="['/admin/banner']">Discount Banners | APP</a>
+                    <a class="collapse-item" [routerLink]="['/admin/offers']">Offers | APP</a>
+                    <a class="collapse-item" [routerLink]="['/admin/delivery']">Delivery</a>
+                    <a class="collapse-item" [routerLink]="['/admin/deliveryBoy']">Rider Boy</a>
+                    <a class="collapse-item" [routerLink]="['/admin/appsettings']">App Setting</a>
+                    <a class="collapse-item" [routerLink]="['/admin/reservation']">Reservation</a>
+                  </div>
                 </div>
             </li>
 
@@ -221,7 +226,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Lunchbox 2020</span>
+                        <span>Copyright &copy; ZSix Restuarant 2020</span>
                     </div>
                 </div>
             </footer>

@@ -26,7 +26,7 @@ function sort(data: Orders[], column: SortColumn, direction: string): Orders[] {
 
 function matches(data: Orders, term: string) {
   debugger
-  return data.orderNo.toLowerCase().includes(term.toLowerCase())
+  return data.customerName.toLowerCase().includes(term.toLowerCase())
 }
 
 @Injectable({
