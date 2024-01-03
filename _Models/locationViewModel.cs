@@ -8,7 +8,7 @@ namespace ZSixRestaurantAdmin._Models
     public class locationViewModel
     {
     }
-
+   
     public class LocationBLL
     {
         public int LocationID { get; set; }
@@ -28,16 +28,16 @@ namespace ZSixRestaurantAdmin._Models
         public string Longitude { get; set; }
         public string Latitude { get; set; }
         public string Passcode { get; set; }
-        public string Opentime { get; set; }
-        public int IsPickupAllowed { get; set; }
-        public int IsDeliveryAllowed { get; set; }
+        public string Opentime { get; set; }        
         public string Closetime{ get; set; }
         public string LastUpdatedBy { get; set; }
         public Nullable<System.DateTime> LastUpdatedDate { get; set; }
         public int StatusID { get; set; }
         public string ImageURL { get; set; }
         public Nullable<int> BrandID { get; set; }
-        public int IsDineInAllowed { get; set; }
-        public int IsAdvanceOrder { get; set; }
+        public int? IsPickupAllowed { get; set; }
+        public int? IsDeliveryAllowed { get; set; }
+        public int? IsDineInAllowed { get; set; }
+        public int? IsAdvanceOrder { get; set; }
     }
 }

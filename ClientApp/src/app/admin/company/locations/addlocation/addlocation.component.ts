@@ -128,6 +128,8 @@ export class AddlocationComponent implements OnInit {
     this.f.statusID.setValue(this.f.statusID.value === true ? 1 : 2);
     this.f.isPickupAllowed.setValue(this.f.isPickupAllowed.value === true ? 1 : 2);
     this.f.isDeliveryAllowed.setValue(this.f.isDeliveryAllowed.value === true ? 1 : 2);
+    this.f.isAdvanceOrder.setValue(this.f.isAdvanceOrder.value === true ? 1 : 2);
+    this.f.isDineInAllowed.setValue(this.f.isDineInAllowed.value === true ? 1 : 2);
 
     if (parseInt(this.f.locationID.value) === 0) {
 
